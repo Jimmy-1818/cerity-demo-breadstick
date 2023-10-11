@@ -2904,19 +2904,10 @@ img.map {
   background-image: url(../images/steps/5.jpg);
 }
 .outer_container .flex_container_steps .steps_container .step:nth-of-type(6) div.image-background{
-  background-image: url(../images/steps/6.jpg);
+  background-image: url(../images/steps/6.jfif);
 }
 .outer_container .flex_container_steps .steps_container .step:nth-of-type(7) div.image-background{
-  background-image: url(../images/steps/7.jpg);
-}
-.outer_container .flex_container_steps .steps_container .step:nth-of-type(8) div.image-background{
-  background-image: url(../images/steps/8.jpg);
-}
-.outer_container .flex_container_steps .steps_container .step:nth-of-type(9) div.image-background{
-  background-image: url(../images/steps/9.jpg);
-}
-.outer_container .flex_container_steps .steps_container .step:nth-of-type(10) div.image-background{
-  background-image: url(../images/steps/10.jpg);
+  background-image: url(../images/steps/7.jpeg);
 }
 
 .outer_container .flex_container_steps .steps_container .step div.step_text {
