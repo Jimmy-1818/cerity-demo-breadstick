@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- -COOKIE-BOT---
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="d6c31a3e-a4a1-44c3-8459-094604ba2906"
+        data-blockingmode="auto" type="text/javascript"></script> -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Certify - Demo</title>
+
+    <!----Jquery CDN--->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+    <!----Favicon----->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <!---<link rel="manifest" href="images/favicon/site.webmanifest">--->
+    <link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="images/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="images/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <!--------BOOTSTRAP----------->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+
+    <!--STYLE-->
+    <link rel="stylesheet" type="text/css" href="style/navbar.css">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+
+
+    <!---Fonts links
+	<link rel="preload" href="fonts/Montserrat/Montserrat-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin>
+	<link rel="preload" href="fonts/Inter/Inter-VariableFont_slnt,wght.ttf" as="font" type="font/ttf" crossorigin>--->
+
+    <!-------JQUERY-------->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="full-nav">
+        <nav class="desktop-nav">
+            <div class="container-navbar">
+                <div class="logo"><a class="page-link" href="https://genuiny.it">
+                    <svg>
+                        <image id="logo_svg_image" xlink:href="images/logo_certify_on_light.svg" src="yourfallback.png" width="100%" height="100%"/>
+                    </svg>
+                </a></div>
+                <div class="menu" style="display: none;"><a class="page-link" href="https://certify.genuiny.com/demo.html">Cos'è Certify?</a>
+                    <a class="page-link" href="#">F.A.Q.</a><a class="page-link"
+                        href="#">Contattaci</a>
+                    <div style="display: none;" class="grid-item dropdown-center dropdown language_group"
+                        style="width: 62px;">
+                        <!--width so to avoid moving other titles-->
+                        <button class="lang_btn btn btn-secondary dropdown-toggle" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <div lang="eng" class="current-language-flex"><span>EN</span><img class="lang_flag"
+                                    src="images/language-flags/eng_flag.svg"></div>
+                            <div lang="ita" class="current-language-flex display_none"><span>IT</span><img
+                                    class="lang_flag" src="images/language-flags/ita_flag.svg"></div>
+                            <div lang="slv" class="current-language-flex display_none"><span>SL</span><img
+                                    class="lang_flag" src="images/language-flags/slv_flag.svg"></div>
+                            <div lang="spa" class="current-language-flex display_none"><span>ES</span><img
+                                    class="lang_flag" src="images/language-flags/spa_flag.svg"></div>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a onclick="set_lang_manually('eng')" class="dropdown-item"><img class="lang_flag"
+                                        src="images/language-flags/eng_flag.svg"><span
+                                        style="font-size: 1em;">English</span></a></li>
+                            <li><a onclick="set_lang_manually('spa')" class="dropdown-item"><img class="lang_flag"
+                                        src="images/language-flags/spa_flag.svg"><span
+                                        style="font-size: 1em;">Español</span></a></li>
+                            <li><a onclick="set_lang_manually('ita')" class="dropdown-item"><img class="lang_flag"
+                                        src="images/language-flags/ita_flag.svg"><span
+                                        style="font-size: 1em;">Italiano</span></a></li>
+                            <li><a onclick="set_lang_manually('slv')" class="dropdown-item"><img class="lang_flag"
+                                        src="images/language-flags/slv_flag.svg"><span
+                                        style="font-size: 1em;">Slovenščina </span></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="hamburger" onclick="hamburger_click();" style="display: none;">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+        <nav class="mobile-nav">
+            <a class="page-link" href="https://certify.genuiny.com/demo.html">Cos'è Certify?</a>
+            <a class="page-link" href="F.A.Q.">F.A.Q.</a>
+            <a class="page-link" href="contattaci">Contattaci</a>
+            <div style="display: none;" class="grid-item dropdown-center dropdown language_group">
+                <button class="lang_btn btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <div lang="eng" class="current-language-flex"><span>EN</span><img class="lang_flag"
+                            src="images/language-flags/eng_flag.svg"></div>
+                    <div lang="ita" class="current-language-flex display_none"><span>IT</span><img class="lang_flag"
+                            src="images/language-flags/ita_flag.svg"></div>
+                    <div lang="slv" class="current-language-flex display_none"><span>SL</span><img class="lang_flag"
+                            src="images/language-flags/slv_flavg.svg"></div>
+                    <div lang="spa" class="current-language-flex display_none"><span>ES</span><img class="lang_flag"
+                            src="images/language-flags/spa_flag.svg"></div>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a onclick="set_lang_manually('eng'); hamburger_click()" class="dropdown-item"><img
+                                class="lang_flag" src="images/language-flags/eng_flag.svg"><span
+                                style="font-size: 1em;">English </span></a></li>
+                    <li><a onclick="set_lang_manually('spa'); hamburger_click()" class="dropdown-item"><img
+                                class="lang_flag" src="images/language-flags/spa_flag.svg"><span
+                                style="font-size: 1em;">Español </span></a></li>
+                    <li><a onclick="set_lang_manually('ita'); hamburger_click()" class="dropdown-item"><img
+                                class="lang_flag" src="images/language-flags/ita_flag.svg"><span
+                                style="font-size: 1em;">Italiano </span></a></li>
+                    <li><a onclick="set_lang_manually('slv'); hamburger_click()" class="dropdown-item"><img
+                                class="lang_flag" src="images/language-flags/slv_flag.svg"><span
+                                style="font-size: 1em;">Slovenščina </span></a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="opacity"></div>
+    </div>
+
+
+    <main class="index3 main-container">
+        <header class="choice">
+            <div class="header_container">
+                <div class="other_products_buttons">
+                    <div id="11" onclick="open_steps(this);" class="button cap"></div>
+                    <div id="12" onclick="open_steps(this);" class="button label"></div>
+                    <div id="13" onclick="open_steps(this);" class="button bottle"></div>
+                </div>
+                <img class="left grid_item header_image" src="images/product.png">
+                <div class="grid-item right header_original_product">
+                    <h1>Prodotto originale!</h1>
+                    <div class="brandmark"></div>
+                </div>
+                <h1 class="grid_item right header_product_name">Amarone Classico DOCG Riserva</h1>
+                <h1 class="grid_item right header_hash">Hash del certificato blockchain:<br><span
+                        class="no-wrap inherit"><span id="hash"
+                            style="font-size: 0.8em; user-select: all;">QmYHmmvVQdh5W9kKKAJ2eRrHri6N3KjKYGrBQYY9NW5jwF</span><img
+                            id="copy-hash" onclick="copy_hash();" src="images/copy-b.png" alt="copy hash button"></span>
+                </h1>
+                <div class="verify_in_genuiny grid_item right header_verify"
+                    onclick="window.open('https://nft.genuiny.com/verifica', '_blank');" style="white-space: nowrap;">
+                    <span class="inherit">Verifica Hash su Genuiny</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="7" viewBox="0 0 7 7" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M3 2H1C0.447715 2 0 2.44772 0 3V6C0 6.55228 0.447715 7 1 7H4C4.55228 7 5 6.55228 5 6V4H4.2V6C4.2 6.11046 4.11046 6.2 4 6.2H1C0.889543 6.2 0.8 6.11046 0.8 6V3C0.8 2.88954 0.889543 2.8 1 2.8H3V2Z"
+                            fill="white" />
+                        <path
+                            d="M5.07919 2.51535C4.96598 2.79811 4.9659 3.06686 5.06762 3.3386C5.04487 3.34072 5.02836 3.34367 5.01172 3.34361C4.72875 3.34515 4.44571 3.3474 4.16284 3.3468C4.11066 3.34671 4.07282 3.36358 4.03516 3.40153C3.71216 3.72681 3.38302 4.04615 3.0652 4.37639C2.89731 4.55083 2.62172 4.55327 2.46431 4.39712C2.29342 4.22754 2.29835 3.969 2.47924 3.78742C2.80421 3.46121 3.12994 3.13574 3.45643 2.81103C3.49247 2.77499 3.50911 2.74017 3.50912 2.68955C3.51021 2.03398 3.51249 1.37839 3.51595 0.722798C3.51613 0.677029 3.51321 0.631283 3.51505 0.585499C3.52137 0.42365 3.59638 0.29746 3.74205 0.221031C3.88773 0.144602 4.03043 0.156856 4.16148 0.242376C4.28637 0.323905 4.34724 0.44507 4.34717 0.595759C4.34695 1.058 4.34357 1.52039 4.34186 1.9827C4.34124 2.14011 4.34391 2.29736 4.34098 2.45485C4.34004 2.50251 4.35607 2.51578 4.40141 2.51528C4.60074 2.51299 4.79995 2.51347 4.99919 2.51313C5.02261 2.51312 5.04601 2.51441 5.07919 2.51535Z"
+                            fill="white" />
+                        <path
+                            d="M6.51501 3.41783C6.18722 3.74067 5.64165 3.65859 5.43094 3.25328C5.27995 2.96283 5.35541 2.61318 5.61472 2.40061C5.86038 2.19917 6.22904 2.20603 6.4749 2.41153C6.74031 2.6334 6.79832 3.02613 6.59659 3.31869C6.57243 3.35375 6.54237 3.38489 6.51501 3.41783Z"
+                            fill="white" />
+                    </svg>
+                </div>
+                <h1 class="grid_item right header_visit">Visita il sito aziendale <a style="font-size: inherit;" href="amaronedocg.html" target="_blank">amaronedocg.com</a></h1>
+            </div>
+        </header>
+
+
+        <section class="card card-story">
+            <h1 class="title">Storia</h1>
+            <p>Un vino non è mai casuale. È la storia delle sue origini, delle terre in cui è nato, degli uomini che lo hanno prodotto. Le parole del Mezzadro alla Fontana in pagine di appunti e vecchi documenti hanno rispolverato valori e passioni della nostra tradizione famigliare. Un'eredità che vogliamo riportare alla luce grazie a questo Amarone Riserva, frutto di esperienza e di innovazione.
+                <br>Maestosamente dotato di grande struttura, è vino che riesce a coniugare i suoi potenti estratti ad una rotondità che pervade tutti i sensi. Un viaggio gustativo e il racconto di una storia che lega da più di 100 anni la nostra famiglia.</p>
+            <div class="outer_container">
+                <div class="flex_container_steps">
+                    <div class="scroll scroll-right"></div>
+                    <div class="scroll scroll-left"></div>
+                    <div class="steps_container">
+                        <div class="step" id="1" onclick="open_steps(this);" style="cursor: pointer;">
+                            <div class="image-background"></div>
+                            <div class="step_text">
+                                <p class="step_text ">
+                                    Coltivazione delle Viti
+                                </p>
+                            </div>
+                        </div>
+                        <div class="step" id="2" onclick="open_steps(this);" style="cursor: pointer;">
+                            <div class="image-background"></div>
+                            <div class="step_text">
+                                <p class="step_text ">
+                                    Raccolta delle Uve
+                                </p>
+                            </div>
+                        </div>
+                        <div class="step" id="3" onclick="open_steps(this);" style="cursor: pointer;">
+                            <div class="image-background"></div>
+                            <div class="step_text">
+                                <p class="step_text ">
+                                    Appassimento
+                                </p>
+                            </div>
+                        </div>
+                        <div class="step" id="4" onclick="open_steps(this);" style="cursor: pointer;">
+                            <div class="image-background"></div>
+                            <div class="step_text">
+                                <p class="step_text ">
+                                    Pigiatura e disarpatura 
+                                </p>
+                            </div>
+                        </div>
+                        <div class="step" id="5" onclick="open_steps(this);" style="cursor: pointer;">
+                            <div class="image-background"></div>
+                            <div class="step_text">
+                                <p class="step_text ">
+                                    Macerazione
+                                </p>
+                            </div>
+                        </div>
+                        <div class="step" id="6" onclick="open_steps(this);" style="cursor: pointer;">
+                            <div class="image-background"></div>
+                            <div class="step_text">
+                                <p class="step_text ">
+                                    Fermentazione
+                                </p>
+                            </div>
+                        </div>
+                        <div class="step" id="7" onclick="open_steps(this);" style="cursor: pointer;">
+                            <div class="image-background"></div>
+                            <div class="step_text">
+                                <p class="step_text ">
+                                    Svinatura
+                                </p>
+                            </div>
+                        </div>
+                        <div class="step" id="8" onclick="open_steps(this);" style="cursor: pointer;">
+                            <div class="image-background"></div>
+                            <div class="step_text">
+                                <p class="step_text ">
+                                    Affinamento
+                                </p>
+                            </div>
+                        </div>
+                        <div class="step" id="9" onclick="open_steps(this);" style="cursor: pointer;">
+                            <div class="image-background"></div>
+                            <div class="step_text">
+                                <p class="step_text ">
+                                    Imbottigliamento
+                                </p>
+                            </div>
+                        </div>
+                        <div class="step" id="10" onclick="open_steps(this);" style="cursor: pointer;">
+                            <div class="image-background"></div>
+                            <div class="step_text">
+                                <p class="step_text ">
+                                    Etichettatura e Distribuzione
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> 
+        <section class="card">
+            <h1 class="title">Dati analitici</h1>
+            <div class="nutritional_table_container">
+                <table class="nutritional_table">
+                    <tbody>
+                        <tr>
+                            <td>Alcol:</td>
+                            <td>16,5% vol.</td>
+                        </tr>
+                        <tr>
+                            <td>Zuccheri</td>
+                            <td>4 g/l</td>
+                        </tr>
+                        <tr>
+                            <td>Acidità Totale</td>
+                            <td>5,50 g/l</td>
+                        </tr>
+                        <tr>
+                            <td>Acidità Volatile</td>
+                            <td>0,60 g/l</td>
+                        </tr>
+                        <tr>
+                            <td>Estratto Secco</td>
+                            <td>35 g/l</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="card card-more-info">
+            <h1 class="title">Fatti e info</h1>
+            <div class="outer_container">
+                <div class="flex_container_steps">
+                    <div class="scroll scroll-right"></div>
+                    <div class="scroll scroll-left"></div>
+                    <div class="steps_container">
+                        <div id="info" onclick="open_info(this)" class="tab">
+                            <div class="tab_content">
+                                <div class="icon"></div>
+                                <h5>Informazioni</h5>
+                            </div>
+                        </div>
+                        <div id="notes" onclick="open_info(this)" class="tab">
+                            <div class="tab_content">
+                                <div class="icon"></div>
+                                <h5>Note organolettiche</h5>
+                            </div>
+                        </div>
+                        <div id="pairings" onclick="open_info(this)" class="tab">
+                            <div class="tab_content">
+                                <div class="icon"></div>
+                                <h5>Abbinamenti</h5>
+                            </div>
+                        </div>
+                        <div id="datas" onclick="open_info(this)" class="tab">
+                            <div class="tab_content">
+                                <div class="icon"></div>
+                                <h5>Dati analitici</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card card-certifications">
+            <h1 class="title">Certificazioni</h1>
+                <div class="image_container_certifications">
+                    <div class="item">
+                        <img src="images/awards/2021-decanter.png">
+                    </div>
+                    <div class="item">
+                        <img src="images/awards/james-suckling-92.png">
+                    </div>
+                    <div class="item">
+                        <img src="images/awards/the-wine-hunter-oro.png">
+                    </div>
+                    <div class="item">
+                        <img src="images/awards/docg.png">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="card">
+            <h1 class="title">Territorio</h1>
+            <h2 class="place-h2"><div class="place-icon"></div>Verona, Veneto</h2>
+            <img class="map" src="images/map.png" alt="map">    
+        </section>
+       
+       
+        <div class="general_left_container main-container steps-container">
+            <button onclick="info_back_btn();" id="back_btn2" class="back_btn">
+                <img src="images/icons/arrow.svg" alt="arrow icon">
+            </button>
+            <div class="full-page">
+                <div class="paragraph step_version">
+                    <div>
+                        <img src="images/steps/1.jpg" alt="placeholder">
+                    </div>
+                    <h2 class="title-info place">Coltivazione delle Viti</h2>
+                    <p>
+                        <b>Vitigni:</b> 70% Corvina, 20% Rondinella, 5% Molinara, 5% Croatina.
+                        <br><br>
+                        <b>Esposizione e altimetria:</b> 350 m. slm
+                        <br><br>
+                        <b>Suolo:</b> Vulcanico - Calcareo - Ghiaioso
+                        <br><br>
+                        <b>Forma di allevamento e densità di impianto:</b> Pergola veronese 4500 viti/ha. 
+                        
+                    </p>
+                </div>
+                <div class="paragraph step_version">
+                    <div>
+                        <img src="images/steps/2.jpg" alt="placeholder">
+                    </div>
+                    <h2 class="title-info place">Raccolta delle Uve</h2>
+                    <p>
+                        Vendemmia: selezione e raccolta manuale dell'uva da metà settembre
+                    </p>
+                </div>
+                <div class="paragraph step_version">
+                    <div>
+                        <img src="images/steps/3.jpg" alt="placeholder">
+                    </div>
+                    <h2 class="title-info place">Appassimento</h2>
+                    <p>
+                        Surmaturazione naturale per circa 4 mesi delle uve nei tradizionali fruttai, con calo del 40% del loro peso e aumento della concentrazione di zuccheri, estratti, aromi e glicerina.
+                    </p>
+                </div>
+                <div class="paragraph step_version">
+                    <div>
+                        <img src="images/steps/4.jpg" alt="placeholder">
+                    </div>
+                    <h2 class="title-info place">Pigiatura e disarpatura</h2>
+                    <p>
+                        Pigiatura e disarpatura a metà Gennaio.
+                        <br>Dopo la raccolta, le uve vengono diraspate per rimuovere i gambi e quindi possono essere pigiate per estrarre il succo.
+                    </p>
+                </div>
+                <div class="paragraph step_version">
+                    <div>
+                        <img src="images/steps/5.jpg" alt="placeholder">
+                    </div>
+                    <h2 class="title-info place">Macerazione</h2>
+                    <p>
+                        Macerazione  a freddo di alcuni giorni.
+                        <br>Durante la macerazione, le bucce dell'uva rilasciano pigmenti, tannini e altri composti che influenzano il colore, il sapore e la struttura del vino</p>
+                </div>
+                <div class="paragraph step_version">
+                    <div>
+                        <img src="images/steps/6.jpg" alt="placeholder">
+                    </div>
+                    <h2 class="title-info place">Fermentazione</h2>
+                    <p>
+                        Fermentazione: inoculo di lieviti selezionati e fermentazione tradizionale in acciaio inox.
+                    </p>
+                </div>
+                <div class="paragraph step_version">
+                    <div>
+                        <img src="images/steps/7.jpg" alt="placeholder">
+                    </div>
+                    <h2 class="title-info place">Svinatura</h2>
+                    <p>
+                        Svinatura e chiusura della fermentazione alcolica e malolattica in cemento.
+                    </p>
+                </div>
+                <div class="paragraph step_version">
+                    <div>
+                        <img src="images/steps/8.jpg" alt="placeholder">
+                    </div>
+                    <h2 class="title-info place">Affinamento</h2>
+                    <p>
+                        Dopo alcuni travasi di pulizia, maturazione per almeno 24 mesi in barriques di Rovere Francese ed Americano e per almeno 36 mesi in botti di Rovere di Slavonia da 20 e 30 Hl. Successivo lungo affinamento in bottiglia.
+                    </p>
+                </div>
+                <div class="paragraph step_version">
+                    <div>
+                        <img src="images/steps/9.jpg" alt="placeholder">
+                    </div>
+                    <h2 class="title-info place">Imbottigliamento</h2>
+                    <p>
+                        Il vino è pronto per essere imbottigliato. Durante questa fase, può essere aggiunto zucchero o lievito per una seconda fermentazione, creando vini frizzanti o spumanti.
+                    </p>
+                </div>
+                <div class="paragraph step_version">
+                    <div>
+                        <img src="images/steps/10.jpg" alt="placeholder">
+                    </div>
+                    <h2 class="title-info place">Etichettatura e Distribuzione</h2>
+                    <p>
+                        Il vino viene etichettato e preparato per la distribuzione e la vendita.
+                    </p>
+                </div>
+                <div class="paragraph step_version">
+                    <div>
+                        <img src="images/steps/label.png" alt="placeholder">
+                    </div>
+                    <h2 class="title-info place">Etichetta</h2>
+                    <p>
+                        L'etichetta è realizzata con la tecnica di stampa flessografica, che offre dettagli precisi e durata nel tempo. Utilizziamo inchiostri a base d'acqua, riducendo l'impatto ambientale. Il materiale dell'etichetta è polipropilene, resistente all'umidità e alle abrasioni, assicurando la leggibilità delle informazioni nel corso degli anni.
+                    </p>
+                </div>
+                <div class="paragraph step_version">
+                    <div>
+                        <img src="images/steps/bottle.jpg" alt="placeholder">
+                    </div>
+                    <h2 class="title-info place">Bottiglia</h2>
+                    <p>
+                        La bottiglia è realizzata con vetro borosilicato, noto per la sua resistenza alle variazioni termiche e chimiche. Questo vetro di alta qualità protegge il vino dall'effetto nocivo della luce e dell'ossigeno, preservando la sua freschezza e integrità. Inoltre, il vetro è completamente riciclabile, sostenendo il nostro impegno per l'ambiente.
+                    </p>
+                </div>
+                <div class="paragraph step_version">
+                    <div>
+                        <img src="images/steps/cork.jpg" alt="placeholder">
+                    </div>
+                    <h2 class="title-info place">Tappo</h2>
+                    <p>
+                        Il tappo è realizzato in sughero naturale, scelto per la sua capacità di garantire una chiusura ermetica e una maturazione controllata del vino. Questo materiale permette una lenta evoluzione del bouquet aromatico, arricchendo il profilo sensoriale del vino nel tempo.
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="general_left_container main-container info-container">
+            <button onclick="info_back_btn();" id="back_btn" class="back_btn">
+                <img src="images/icons/arrow.svg" alt="arrow icon">
+            </button>
+            <div class="full-page">
+                <div class="paragraph">
+                    <h2 class="title-info info"><div></div>Informazioni</h2>
+                    <p>
+                        <b>Vitigni:</b> 70% Corvina, 20% Rondinella, 5% Molinara, 5% Croatina.
+                        <br><br>
+                        <b>Ubicazione vigneti:</b> Comuni di San Pietro in Cariano, Marano di Valpolicella e Mazzano di Negrar. 
+                        <br><br>
+                        <b>Esposizione e altimetria:</b> 350 m. slm. 
+                        <br><br>
+                        <b>Suolo:</b> Vulcanico - Calcareo - Ghiaioso 
+                        <br><br>
+                        <b>Forma di allevamento e densità di impianto:</b> Pergola veronese 4500 viti/ha. 
+                        <br><br>
+                        <b>Vendemmia:</b> Selezione e raccolta manuale dell'uva da metà settembre 
+                        <br><br>
+                        <b>Maturazione:</b> almeno 24 mesi in barriques di Rovere Francese ed Americano e per almeno 36 mesi in botti di Rovere di Slavonia da 20 e 30 Hl. 
+                        <br><br>
+                        <b>Formato (Lt):</b> 0,750 
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <h2 class="title-info notes"><div></div>Note organolettiche</h2>
+                    <p>
+                        Colore granato carico con riflessi aranciati. I sentori intensi ricordano un'abetaia d'estate, con sottobosco secco di mirto, lamponi e fragole. Il naso si inebria di avana, cuoio e scorze di agrumi canditi, mentre il palato secco ma di setosa polpa, offre un tannino morbidamente avvolto nei balsami del suo frutto.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <h2 class="title-info pairings"><div></div>Abbinamenti</h2>
+                    <p>
+                        Ottimo con carni rosse e formaggi stagionati ma superlativo ad accompagnare il lieto conversare
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <h2 class="title-info datas"><div></div>Dati analitici</h2>
+                    <p>
+                        Alcol: 16,50% vol. Zuccheri: 4 g/l Acidità Totale: 5,50 g/l Acidità Volatile: 0,60 g/l Estratto Secco: 35 g/l
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        
+
+
+    </main>
+
+
+    <div class="footer-link">
+        <a target="_blank" href="https://certify.genuiny.com/">certify.genuiny.com</a>
+    </div>
+
+    <!----- BOOTSTRAP ------->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+        integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+        crossorigin="anonymous"></script>
+
+    <!--navbar-->
+    <script class="navbar-link" type="text/javascript" src="script/navbar.js"></script>
+
+
+    <script type="text/javascript" src="script/script.js"></script>
+</body>
+
+</html>
