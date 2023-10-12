@@ -1948,12 +1948,8 @@ header.choice .header_container div.other_products_buttons .button:nth-of-type(1
   background-image: url(../images/icons-info/label.svg);
 }
 header.choice .header_container div.other_products_buttons .button:nth-of-type(2){
-  background-image: url(../images/icons-info/bottle.svg);
-  background-size: 30%
-}
-header.choice .header_container div.other_products_buttons .button:nth-of-type(3){
-  background-image: url(../images/icons-info/cork.svg);
-  background-size: 40%
+  background-image: url(../images/icons-info/packaging_blue.svg);
+  background-size: 80%
 }
 header.choice .header_container div.other_products_buttons .button:last-of-type{
   margin-bottom: 0;
@@ -3028,7 +3024,7 @@ img.map {
   background-image: url(../images/icons-info/info-blue.svg);
 }
 .info-container .paragraph:nth-of-type(2) h2 div{
-  background-image: url(../images/icons-info/smell-blue.svg);
+  background-image: url(../images/icons-info/enviromental_blue.svg);
 }
 .info-container .paragraph:nth-of-type(3) h2 div{
   background-image: url(../images/icons-info/pair-blue.svg);
@@ -3038,11 +3034,11 @@ img.map {
 }
 
 .outer_container .flex_container_steps .steps_container .tab:nth-of-type(2) .tab_content {
-  background-image: url(../images/icons-info/smell_bg.svg);
+  background-image: url(../images/icons-info/enviromental_bg.svg);
 }
 
 .outer_container .flex_container_steps .steps_container .tab:nth-of-type(2) .tab_content div.icon {
-  background-image: url(../images/icons-info/smell.svg);
+  background-image: url(../images/icons-info/enviromental.svg);
 }
 
 .outer_container .flex_container_steps .steps_container .tab:nth-of-type(3) .tab_content {
