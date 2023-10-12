@@ -2711,7 +2711,7 @@ section.card h1 {
 
 
 .nutritional_table_container {
-  overflow-x: auto;
+  overflow-x: hidden;
   margin-bottom: 4rem;
   width: 105%;
   padding-right: 5%;
